@@ -10,6 +10,7 @@ package com.example.patterns.sington;
  * @Description: 单例模式：（饿汉式）
  *               优点：线程安全；
  *               缺点：当类文件加载的时候类实例化对象就已经存在；
+ *               吹毛求疵的说法：在代码里用class.forname("")会从新创建对象
  */
 public class SingletonPatternDemo1 {
 
