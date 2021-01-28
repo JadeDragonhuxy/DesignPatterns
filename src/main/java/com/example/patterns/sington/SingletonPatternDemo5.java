@@ -7,10 +7,9 @@ package com.example.patterns.sington;
  * @Author: huxy
  * @Date: 2021/1/24 17:04
  * @Version: 1.0
- * @Description: 单例模式：（懒汉式改写）
- *               优点：达到里在需要时初始化的目的，由于在getInstance方法上加synchronized虽然可以解决多线程的问题，但是带来了效率低的问题，
- *                    为了解决效率低的问题，降低🔒得级次，在关键代码块上加锁，但是并不能解决多线程的问题；
- *               缺点：由于懒汉式有多线程问题，为此在getInstance方法上进行加锁处理多线程带来的问题，但每次操作时要申请这把锁，降低了代码效率；
+ * @Description: 单例模式：（懒汉式改写基于Demo4改写）
+ *               优点：达到里在需要时初始化的目的，通过减少同步代码块的方式，提高了部分效率
+ *               缺点：但是不能解决多线程带来的问题
  *
  */
 public class SingletonPatternDemo5 {
@@ -36,8 +35,8 @@ public class SingletonPatternDemo5 {
     }
 
     public static void main(String[] args){
-        /*SingletonPatternDemo2 s1 = SingletonPatternDemo2.getInstance();
-        SingletonPatternDemo2 s2 = SingletonPatternDemo2.getInstance();
+        /*SingletonPatternDemo2 s1 = SingletonPatternDemo5.getInstance();
+        SingletonPatternDemo2 s2 = SingletonPatternDemo5.getInstance();
         if (s1 == s2){
             System.out.println("nice");
         }else {
@@ -48,7 +47,7 @@ public class SingletonPatternDemo5 {
             /*new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    System.out.println(SingletonPatternDemo3.getInstance().hashCode());
+                    System.out.println(SingletonPatternDemo5.getInstance().hashCode());
                 }
             }).start();*/
             new Thread(() -> {

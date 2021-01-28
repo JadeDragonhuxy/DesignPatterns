@@ -32,8 +32,8 @@ public class SingletonPatternDemo3 {
     }
 
     public static void main(String[] args){
-        /*SingletonPatternDemo2 s1 = SingletonPatternDemo2.getInstance();
-        SingletonPatternDemo2 s2 = SingletonPatternDemo2.getInstance();
+        /*SingletonPatternDemo2 s1 = SingletonPatternDemo3.getInstance();
+        SingletonPatternDemo2 s2 = SingletonPatternDemo3.getInstance();
         if (s1 == s2){
             System.out.println("nice");
         }else {

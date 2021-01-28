@@ -8,7 +8,7 @@ package com.example.patterns.sington;
  * @Date: 2021/1/24 17:04
  * @Version: 1.0
  * @Description: 单例模式：（懒汉式改写）
- *               优点：达到里在需要时初始化的目的，解决了多线程的问题；
+ *               优点：达到了在需要时初始化的目的，解决了多线程的问题；
  *               缺点：由于懒汉式有多线程问题，为此在getInstance方法上进行加锁处理多线程带来的问题，但每次操作时要申请这把锁，降低了代码效率；
  *
  */
@@ -33,8 +33,8 @@ public class SingletonPatternDemo4 {
     }
 
     public static void main(String[] args){
-        /*SingletonPatternDemo2 s1 = SingletonPatternDemo2.getInstance();
-        SingletonPatternDemo2 s2 = SingletonPatternDemo2.getInstance();
+        /*SingletonPatternDemo2 s1 = SingletonPatternDemo4.getInstance();
+        SingletonPatternDemo2 s2 = SingletonPatternDemo4.getInstance();
         if (s1 == s2){
             System.out.println("nice");
         }else {
@@ -45,7 +45,7 @@ public class SingletonPatternDemo4 {
             /*new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    System.out.println(SingletonPatternDemo3.getInstance().hashCode());
+                    System.out.println(SingletonPatternDemo4.getInstance().hashCode());
                 }
             }).start();*/
             new Thread(() -> {
